@@ -1,0 +1,33 @@
+virtualenv:
+  python: python2.7
+  path: !!null
+  keep: false
+  pip:
+    requirements: []
+    packages: []
+  default_excludes:
+    - easy_install.*
+    - pip*/**
+    - py-lambda-packer.yaml
+    - setuptools*/**
+    - wheel*/**
+
+packager:
+  target: py-lambda-package.zip
+  build_path: !!null
+  keep: false
+  followlinks: false
+  includes: []
+  excludes: []
+  default_excludes:
+    - '**/*~'
+    - '**/*.swp'
+    - '**/.*.swp'
+    - '**/.DS_Store'
+    - '**/.DS_Store?'
+    - '**/._*'
+    - '**/.Spotlight-V100'
+    - '**/.Trashes'
+    - '**/Icon?'
+    - '**/ehthumbs.db'
+    - '**/Thumbs.db'

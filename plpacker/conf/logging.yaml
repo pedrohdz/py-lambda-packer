@@ -1,0 +1,35 @@
+version: 1
+
+formatters:
+  colorized:
+    (): colorlog.ColoredFormatter
+    reset: True
+    format: '%(log_color)s%(levelname)s - %(message)s'
+
+  simple:
+    format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: colorized
+    stream: ext://sys.stdout
+
+  # debug_file:
+  #   declass: logging.FileHandler
+  #   delevel: DEBUG
+  #   deformatter: simple
+  #   defilename: debugging.log
+
+loggers:
+  plpacker:
+    level: DEBUG
+    handlers: [console]
+    propagate: no
+
+root:
+  level: DEBUG
+  handlers: [console]
+
+# vim: filetype=yaml tabstop=2 shiftwidth=2 expandtab autoindent

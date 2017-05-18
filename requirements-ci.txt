@@ -1,0 +1,9 @@
+# Maintain this file manually.  Do NOT use `pip freeze`
+coverage>=4.4.1
+flake8>=3.3.0
+pep257>=0.7.0
+pyfakefs>=3.1
+pylint>=1.7.1
+pytest-cov>=2.5.1
+pytest>=3.0.7
+tox>=2.7.0

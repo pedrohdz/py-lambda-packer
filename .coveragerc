@@ -1,0 +1,8 @@
+[run]
+branch = True
+
+[paths]
+source = plpacker/
+
+[report]
+fail_under = 50
