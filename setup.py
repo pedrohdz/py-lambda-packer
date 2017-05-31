@@ -4,18 +4,27 @@ import ast
 from setuptools import setup, find_packages
 
 _ENTRY_POINT = 'plpacker.cli:entry_point'
-_VERSION_RE = re.compile(r'__version__\s+=\s+(.*)')
 
-with open('plpacker/__init__.py', 'rb') as f:
-    _VERSION = str(ast.literal_eval(_VERSION_RE.search(
-        f.read().decode('utf-8')).group(1)))
+
+def version():
+    version_re = re.compile(r'__version__\s+=\s+(.*)')
+    with open('plpacker/__init__.py', 'rb') as handle:
+        return str(ast.literal_eval(version_re.search(
+            handle.read().decode('utf-8')).group(1)))
+
+
+def long_description():
+    with open('README.rst', 'rb') as handle:
+        return handle.read().decode('utf-8')
+
 
 setup(
     name='py-lambda-packer',
-    version=_VERSION,
+    version=version(),
     author='Pedro H.',
     author_email='pedro@digitalrounin.com',
     description='Helps build AWS Lambda zip files for Python projects.',
+    long_description=long_description(),
     url='https://github.com/digitalrounin/py-lambda-packer.git',
     license='MIT',
     classifiers=[
