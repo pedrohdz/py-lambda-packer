@@ -43,7 +43,7 @@ class Packager(object):
             if not os.path.isdir(target_dir):
                 os.makedirs(target_dir)
             LOGGER.debug('Copying "%s" to "%s".', source, target)
-            shutil.copyfile(source, target)
+            shutil.copy(source, target)
 
     def package(self):
         LOGGER.info('Packaging files to "%s".', self.zip_file)
