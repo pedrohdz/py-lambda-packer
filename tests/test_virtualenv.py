@@ -52,7 +52,7 @@ class TestVirtualEnvCreate(object):
         virtual_env.create()
         run_mock.assert_called_once()
 
-        regex = re.compile(r'/tmp/plpacker.virtualenv-\w+-tmp')
+        regex = re.compile(r'^\/.*\/plpacker\.virtualenv-\w+-tmp$')
         (call_args, call_kargs) = run_mock.call_args
 
         assert call_args[0][0] == 'virtualenv'
@@ -66,7 +66,7 @@ class TestVirtualEnvCreate(object):
         venv.create()
         run_mock.assert_called_once()
 
-        regex = re.compile(r'/tmp/plpacker.virtualenv-\w+-tmp')
+        regex = re.compile(r'^\/.*\/plpacker\.virtualenv-\w+-tmp$')
         (call_args, call_kargs) = run_mock.call_args
 
         assert call_args[0][0] == 'virtualenv'
