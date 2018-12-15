@@ -6,11 +6,11 @@ python:
 install:
   # Including codecov requirements-dev.txt then executing `codecov` is so
   # hacky.  There must be a cleaner way of handling this.
-  - pip install tox-travis codecov -r requirements-dev.txt
+  - pip install tox-travis codecov
 
 script:
   - tox
 
 after_success:
-  - py.test --cov=./plpacker ./tests/
+  #- py.test --cov=./plpacker ./tests/
   - codecov
