@@ -4,13 +4,13 @@ python:
   - "2.7"
 
 install:
-  # Including codecov requirements-dev.txt then executing `codecov` is so
-  # hacky.  There must be a cleaner way of handling this.
-  - pip install tox-travis codecov
+  - pip install tox-travis codecov .[test]
 
 script:
   - tox
 
 after_success:
+  # This is really hacky. There must be a better way of handling this.
   #- py.test --cov=./plpacker ./tests/
+  - python setup.py test --addopt --cov=./plpacker
   - codecov
