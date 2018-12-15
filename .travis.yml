@@ -8,8 +8,6 @@ install:
 
 script:
   - tox
-
-after_success:
   # This is really hacky. There must be a better way of handling this.
   #- py.test --cov=./plpacker ./tests/
   - python setup.py test --addopt --cov=./plpacker
