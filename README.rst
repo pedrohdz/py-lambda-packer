@@ -43,7 +43,7 @@ To install directly the bleeding edge version from *GitHub*:
 
 ::
 
-    $ pip install git+https://github.com/digitalrounin/py-lambda-packer.git@master#egg=py-lambda-packer
+    $ pip install git+https://github.com/pedrohdz/py-lambda-packer.git@master#egg=py-lambda-packer
 
 To install a specific tag or branch, replace ``master`` in the URL of
 the previous command with the desired name.
@@ -206,10 +206,10 @@ Please keep in mind that this list is not intended to be extensive. It
 is only here to help folks branch out their investigations.
 
 .. |Code Climate| image:: https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg
-   :target: https://codeclimate.com/github/digitalrounin/py-lambda-packer
-.. |Build Status| image:: https://travis-ci.org/digitalrounin/py-lambda-packer.svg?branch=master
-   :target: https://travis-ci.org/digitalrounin/py-lambda-packer
-.. |codecov| image:: https://codecov.io/gh/digitalrounin/py-lambda-packer/branch/master/graph/badge.svg
-   :target: https://codecov.io/gh/digitalrounin/py-lambda-packer
+   :target: https://codeclimate.com/github/pedrohdz/py-lambda-packer
+.. |Build Status| image:: https://travis-ci.org/pedrohdz/py-lambda-packer.svg?branch=master
+   :target: https://travis-ci.org/pedrohdz/py-lambda-packer
+.. |codecov| image:: https://codecov.io/gh/pedrohdz/py-lambda-packer/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/pedrohdz/py-lambda-packer
 .. |PyPI version| image:: https://badge.fury.io/py/py-lambda-packer.svg
    :target: https://badge.fury.io/py/py-lambda-packer
