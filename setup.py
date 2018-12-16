@@ -20,6 +20,8 @@ def long_description():
 
 
 _TEST_REQUIRE = [
+    # coverage 5 is still in alpha.
+    'coverage>=4.4.1,<5',
     'pyfakefs>=3.5',
     'pytest-cov>=2.5.1',
     'pytest>=3.0.7',
@@ -29,7 +31,6 @@ if sys.version_info[0] < 3:
     _TEST_REQUIRE.extend(['mock'])
 
 _CI_REQUIRE = [
-    'coverage>=4.4.1',
     'flake8>=3.3.0',
     'pep257>=0.7.0',
     'pylint>=1.7.1',
