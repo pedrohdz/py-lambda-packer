@@ -6,9 +6,9 @@ import os
 import re
 
 try:
-    from unittest.mock import patch, sentinel
+    from unittest.mock import patch, sentinel, PropertyMock
 except ImportError:
-    from mock import patch, sentinel
+    from mock import patch, sentinel, PropertyMock
 
 import pytest
 
@@ -230,3 +230,26 @@ class TestVirtualEnvSanitizedEnv(object):
             '/0ho8Ke/hL9DsW/ymH81W:/L51pua:/Vngp3V/G2m7Ih/05m7qW/LyrYkK/'
             'l5NuwA/oq1DPp:/Zpdhu4/bjvuqt:/STGtcb/FhAnWH/HwTvOr/gngGiB:'
             '/Zizj4D/szncsv/O5wO6X/joFHVT')
+
+
+class TestVirtualEnvProperties(object):
+    @patch("plpacker.virtualenv.FileSet")
+    @patch.object(VirtualEnv, "site_package_dirs", new_callable=PropertyMock)
+    def test_filesets_for_dirs(self, site_package_dirs, fileset, virtual_env):
+        # pylint: disable=unused-argument,no-self-use
+        site_package_dirs.return_value = ["/tmp/dir1", "/tmp/dir2"]
+
+        filesets = virtual_env.filesets
+
+        assert len(filesets) == 2
+        assert filesets[0] == fileset.return_value
+        assert filesets[1] == fileset.return_value
+
+    @patch.object(VirtualEnv, "site_package_dirs", new_callable=PropertyMock)
+    def test_filesets_for_no_dirs(self, site_package_dirs, virtual_env):
+        # pylint: disable=unused-argument,no-self-use
+        site_package_dirs.return_value = []
+
+        filesets = virtual_env.filesets
+
+        assert not filesets

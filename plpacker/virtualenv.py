@@ -93,6 +93,8 @@ class VirtualEnv(object):
         dirs = glob.glob(os.path.join(self.path, 'lib', '*', 'site-packages'))
         dirs.extend(
             glob.glob(os.path.join(self.path, 'lib', '*', 'dist-packages')))
+        dirs.extend(
+            glob.glob(os.path.join(self.path, 'lib64', '*', 'site-packages')))
         return dirs
 
     @property
